@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: aqua-random
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: FREE_HITS_LIMIT
+        value: 3
+
