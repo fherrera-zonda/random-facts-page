@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AquaRandom - Memes, Facts & News</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💧</text></svg>">
+</head>
+<body>
+  <!-- Animated background -->
+  <div class="ocean-bg">
+    <div class="wave wave1"></div>
+    <div class="wave wave2"></div>
+    <div class="wave wave3"></div>
+    <div class="bubbles">
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+    </div>
+  </div>
+
+  <!-- Language Toggle -->
+  <div class="lang-toggle">
+    <button id="langBtn" class="lang-btn" title="Switch Language">
+      <span class="lang-text">ES</span>
+      <span class="lang-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+      </span>
+    </button>
+  </div>
+
+  <!-- Main Container -->
+  <main class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 100 100" class="water-drop">
+            <defs>
+              <linearGradient id="dropGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#00d4ff"/>
+                <stop offset="50%" style="stop-color:#0099cc"/>
+                <stop offset="100%" style="stop-color:#006994"/>
+              </linearGradient>
+            </defs>
+            <path d="M50 5 C50 5 15 45 15 65 C15 85 30 95 50 95 C70 95 85 85 85 65 C85 45 50 5 50 5 Z" fill="url(#dropGradient)"/>
+            <ellipse cx="35" cy="55" rx="8" ry="12" fill="rgba(255,255,255,0.3)" transform="rotate(-20 35 55)"/>
+          </svg>
+        </div>
+        <h1 class="logo-text">
+          <span class="logo-aqua">Aqua</span><span class="logo-random">Random</span>
+        </h1>
+      </div>
+      <p class="tagline" data-i18n="tagline">Descubre algo nuevo cada vez</p>
+    </header>
+
+    <!-- Hit Counter -->
+    <div class="hit-counter" id="hitCounter">
+      <div class="counter-label" data-i18n="remaining">Consultas gratuitas restantes</div>
+      <div class="counter-bubbles" id="counterBubbles">
+        <span class="counter-bubble active"></span>
+        <span class="counter-bubble active"></span>
+        <span class="counter-bubble active"></span>
+      </div>
+    </div>
+
+    <!-- Content Display Area -->
+    <section class="content-area" id="contentArea">
+      <div class="content-placeholder" id="placeholder">
+        <div class="placeholder-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <p data-i18n="selectContent">Selecciona un tipo de contenido para comenzar</p>
+      </div>
+      
+      <div class="content-card hidden" id="contentCard">
+        <div class="card-type" id="cardType"></div>
+        <div class="card-body" id="cardBody"></div>
+      </div>
+    </section>
+
+    <!-- Action Buttons -->
+    <section class="actions actions-5">
+      <button class="action-btn btn-fact" id="btnFact" data-type="fact">
+        <span class="btn-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 16v-4M12 8h.01"/>
+          </svg>
+        </span>
+        <span class="btn-text" data-i18n="fact">Dato Curioso</span>
+      </button>
+      
+      <button class="action-btn btn-news" id="btnNews" data-type="news">
+        <span class="btn-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2"/>
+            <path d="M7 8h6M7 12h6M7 16h3"/>
+          </svg>
+        </span>
+        <span class="btn-text" data-i18n="news">Noticia</span>
+      </button>
+      
+      <button class="action-btn btn-sports" id="btnSports" data-type="sports">
+        <span class="btn-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            <path d="M2 12h20"/>
+          </svg>
+        </span>
+        <span class="btn-text" data-i18n="sports">Deportes</span>
+      </button>
+      
+      <button class="action-btn btn-meme" id="btnMeme" data-type="meme">
+        <span class="btn-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <path d="M21 15l-5-5L5 21"/>
+          </svg>
+        </span>
+        <span class="btn-text" data-i18n="meme">Meme</span>
+      </button>
+      
+      <button class="action-btn btn-random" id="btnRandom" data-type="random">
+        <span class="btn-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/>
+          </svg>
+        </span>
+        <span class="btn-text" data-i18n="random">Aleatorio</span>
+      </button>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p data-i18n="footer">Cuidemos el agua, cuidemos el planeta</p>
+    </footer>
+  </main>
+
+  <!-- Cookie Consent Modal -->
+  <div class="modal-overlay" id="cookieModal">
+    <div class="modal cookie-modal">
+      <div class="modal-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M8 12a1 1 0 100-2 1 1 0 000 2zM16 12a1 1 0 100-2 1 1 0 000 2zM12 16a1 1 0 100-2 1 1 0 000 2zM9 8a1 1 0 100-2 1 1 0 000 2z"/>
+        </svg>
+      </div>
+      <h2 data-i18n="cookieTitle">Usamos Cookies</h2>
+      <p data-i18n="cookieText">Utilizamos cookies para mejorar tu experiencia y mostrarte contenido personalizado. Al aceptar, nos permites recopilar informacion anonima sobre tu visita.</p>
+      <div class="modal-actions">
+        <button class="modal-btn btn-accept" id="acceptCookies" data-i18n="accept">Aceptar</button>
+        <button class="modal-btn btn-decline" id="declineCookies" data-i18n="decline">Rechazar</button>
+      </div>
+      <p class="cookie-note" data-i18n="cookieNote">Puedes cambiar tu preferencia en cualquier momento.</p>
+    </div>
+  </div>
+
+  <!-- User Info Modal -->
+  <div class="modal-overlay hidden" id="userInfoModal">
+    <div class="modal info-modal">
+      <div class="modal-icon success">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+          <path d="M12 6v6l4 2"/>
+        </svg>
+      </div>
+      <h2 data-i18n="infoTitle">Continua Disfrutando</h2>
+      <p data-i18n="infoText">Has alcanzado el limite de consultas gratuitas. Comparte tu informacion para seguir descubriendo contenido increible.</p>
+      
+      <form class="info-form" id="userInfoForm">
+        <div class="form-group">
+          <label for="userName" data-i18n="nameLabel">Nombre (opcional)</label>
+          <input type="text" id="userName" name="name" placeholder="Tu nombre">
+        </div>
+        <div class="form-group">
+          <label for="userEmail" data-i18n="emailLabel">Correo electronico</label>
+          <input type="email" id="userEmail" name="email" placeholder="tu@email.com" required>
+        </div>
+        <div class="form-group">
+          <label for="userPhone" data-i18n="phoneLabel">Telefono (opcional)</label>
+          <input type="tel" id="userPhone" name="phone" placeholder="+1 234 567 8900">
+        </div>
+        <button type="submit" class="modal-btn btn-submit" data-i18n="submit">Continuar</button>
+      </form>
+      
+      <p class="privacy-note" data-i18n="privacyNote">Tu informacion esta segura y no sera compartida con terceros.</p>
+    </div>
+  </div>
+
+  <!-- Loading Overlay -->
+  <div class="loading-overlay hidden" id="loadingOverlay">
+    <div class="loading-spinner">
+      <div class="spinner-drop"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
