@@ -2,6 +2,11 @@
 // AquaRandom - Main Application
 // ========================================
 
+// API Configuration - Set this to your API Gateway URL after deployment
+// For local development, use empty string to use relative paths
+// For production with API Gateway, set to your API Gateway URL (e.g., 'https://xxxxx.execute-api.us-east-1.amazonaws.com/Prod')
+const API_BASE_URL = window.AQUARANDOM_API_URL || '';
+
 // Internationalization strings
 const i18n = {
   es: {
@@ -308,7 +313,7 @@ async function initializeVisitor() {
   state.sessionId = sessionId;
   
   try {
-    const response = await fetch('/api/visitor/init', {
+    const response = await fetch(`${API_BASE_URL}/api/visitor/init`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -342,7 +347,7 @@ async function initializeVisitor() {
 
 async function acceptCookies() {
   try {
-    const response = await fetch('/api/visitor/accept-cookies', {
+    const response = await fetch(`${API_BASE_URL}/api/visitor/accept-cookies`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ sessionId: state.sessionId })
@@ -369,7 +374,7 @@ async function fetchContent(contentType) {
   showLoading();
   
   try {
-    const response = await fetch('/api/content/random', {
+    const response = await fetch(`${API_BASE_URL}/api/content/random`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -413,7 +418,7 @@ async function saveUserInfo(formData) {
   showLoading();
   
   try {
-    const response = await fetch('/api/visitor/save-info', {
+    const response = await fetch(`${API_BASE_URL}/api/visitor/save-info`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

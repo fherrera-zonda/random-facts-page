@@ -1,0 +1,143 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: AquaRandom - Serverless Backend with API Gateway and DynamoDB
+
+Globals:
+  Function:
+    Timeout: 30
+    Runtime: nodejs18.x
+    MemorySize: 256
+    Environment:
+      Variables:
+        VISITORS_TABLE: !Ref VisitorsTable
+        USER_INFO_TABLE: !Ref UserInfoTable
+        INTERACTIONS_TABLE: !Ref InteractionsTable
+        FREE_HITS_LIMIT: '3'
+
+  Api:
+    Cors:
+      AllowMethods: "'GET,POST,OPTIONS'"
+      AllowHeaders: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+      AllowOrigin: "'*'"
+
+Resources:
+  # DynamoDB Tables
+  VisitorsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: aquarandom-visitors
+      AttributeDefinitions:
+        - AttributeName: sessionId
+          AttributeType: S
+      KeySchema:
+        - AttributeName: sessionId
+          KeyType: HASH
+      BillingMode: PAY_PER_REQUEST
+
+  UserInfoTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: aquarandom-userinfo
+      AttributeDefinitions:
+        - AttributeName: visitorId
+          AttributeType: S
+      KeySchema:
+        - AttributeName: visitorId
+          KeyType: HASH
+      BillingMode: PAY_PER_REQUEST
+
+  InteractionsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: aquarandom-interactions
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
+      BillingMode: PAY_PER_REQUEST
+      TimeToLiveSpecification:
+        AttributeName: ttl
+        Enabled: true
+
+  # Lambda Function
+  AquaRandomFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: aquarandom-api
+      CodeUri: lambda/
+      Handler: index.handler
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref VisitorsTable
+        - DynamoDBCrudPolicy:
+            TableName: !Ref UserInfoTable
+        - DynamoDBCrudPolicy:
+            TableName: !Ref InteractionsTable
+      Events:
+        # Health check
+        Health:
+          Type: Api
+          Properties:
+            Path: /api/health
+            Method: get
+        # Config
+        Config:
+          Type: Api
+          Properties:
+            Path: /api/config
+            Method: get
+        # Visitor endpoints
+        VisitorInit:
+          Type: Api
+          Properties:
+            Path: /api/visitor/init
+            Method: post
+        VisitorAcceptCookies:
+          Type: Api
+          Properties:
+            Path: /api/visitor/accept-cookies
+            Method: post
+        VisitorSaveInfo:
+          Type: Api
+          Properties:
+            Path: /api/visitor/save-info
+            Method: post
+        # Content endpoints
+        ContentRandom:
+          Type: Api
+          Properties:
+            Path: /api/content/random
+            Method: post
+        # CORS preflight
+        OptionsVisitorInit:
+          Type: Api
+          Properties:
+            Path: /api/visitor/init
+            Method: options
+        OptionsVisitorCookies:
+          Type: Api
+          Properties:
+            Path: /api/visitor/accept-cookies
+            Method: options
+        OptionsVisitorInfo:
+          Type: Api
+          Properties:
+            Path: /api/visitor/save-info
+            Method: options
+        OptionsContent:
+          Type: Api
+          Properties:
+            Path: /api/content/random
+            Method: options
+
+Outputs:
+  ApiUrl:
+    Description: API Gateway endpoint URL
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod"
+  
+  FunctionArn:
+    Description: Lambda Function ARN
+    Value: !GetAtt AquaRandomFunction.Arn
+
