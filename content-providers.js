@@ -223,118 +223,408 @@ const generalNews = [
   }
 ];
 
-// Sports news (curated with El Salvador focus)
+// Sports news - Latin American & European Major Leagues Focus
 const sportsNews = [
+  // ========== LA LIGA (Spain) ==========
   {
     en: {
-      title: "El Salvador National Team Prepares for World Cup Qualifiers",
-      description: "La Selecta intensifies training ahead of crucial CONCACAF World Cup qualifying matches, with fans showing strong support across the country.",
-      source: "CONCACAF Sports",
-      category: "football"
+      title: "La Liga: Real Madrid Dominates at Santiago Bernabeu",
+      description: "Real Madrid delivers a masterclass performance at home, with Vinicius Jr and Bellingham leading the attack in a convincing victory.",
+      source: "La Liga",
+      category: "La Liga"
     },
     es: {
-      title: "Seleccion de El Salvador se Prepara para Eliminatorias Mundialistas",
-      description: "La Selecta intensifica entrenamientos previo a partidos cruciales de eliminatorias mundialistas de CONCACAF, con aficionados mostrando fuerte apoyo en todo el pais.",
-      source: "CONCACAF Deportes",
-      category: "futbol"
+      title: "La Liga: Real Madrid Domina en el Santiago Bernabeu",
+      description: "Real Madrid ofrece una actuacion magistral en casa, con Vinicius Jr y Bellingham liderando el ataque en una victoria convincente.",
+      source: "La Liga",
+      category: "La Liga"
     }
   },
   {
     en: {
-      title: "Salvadoran Surfers Shine in International Competition",
-      description: "El Salvador's surfing team achieves historic results at the ISA World Surfing Games, showcasing the country's world-class waves.",
-      source: "World Surf League",
-      category: "surfing"
+      title: "El Clasico Preview: Real Madrid vs Barcelona",
+      description: "The biggest match in club football approaches as Real Madrid and Barcelona prepare for another epic encounter at the Santiago Bernabeu.",
+      source: "La Liga",
+      category: "La Liga"
     },
     es: {
-      title: "Surfistas Salvadorenos Brillan en Competencia Internacional",
-      description: "El equipo de surf de El Salvador logra resultados historicos en los Juegos Mundiales de Surf ISA, mostrando las olas de clase mundial del pais.",
-      source: "Liga Mundial de Surf",
-      category: "surf"
+      title: "Previa El Clasico: Real Madrid vs Barcelona",
+      description: "El partido mas grande del futbol de clubes se acerca mientras Real Madrid y Barcelona se preparan para otro epico encuentro en el Santiago Bernabeu.",
+      source: "La Liga",
+      category: "La Liga"
     }
   },
   {
     en: {
-      title: "Liga Mayor de Futbol: Alianza FC Leads the Championship",
-      description: "Alianza FC continues its impressive run in the Salvadoran top division, with fans packing stadiums across the country.",
-      source: "El Salvador Football Federation",
-      category: "football"
+      title: "Barcelona's Young Stars Shine in La Liga",
+      description: "FC Barcelona's La Masia graduates continue to impress, with Lamine Yamal and Pedri orchestrating brilliant attacking football.",
+      source: "La Liga",
+      category: "La Liga"
     },
     es: {
-      title: "Liga Mayor de Futbol: Alianza FC Lidera el Campeonato",
-      description: "Alianza FC continua su impresionante racha en la primera division salvadorena, con aficionados llenando estadios en todo el pais.",
-      source: "Federacion Salvadorena de Futbol",
-      category: "futbol"
+      title: "Jovenes Estrellas del Barcelona Brillan en La Liga",
+      description: "Los graduados de La Masia del FC Barcelona continuan impresionando, con Lamine Yamal y Pedri orquestando un futbol ofensivo brillante.",
+      source: "La Liga",
+      category: "La Liga"
     }
   },
   {
     en: {
-      title: "NBA Season Update: Lakers and Celtics Lead Conferences",
-      description: "The NBA regular season heats up as traditional powerhouses Lakers and Celtics dominate their respective conferences.",
-      source: "NBA News",
-      category: "basketball"
+      title: "Atletico Madrid Battles for Top Four Finish",
+      description: "Diego Simeone's Atletico Madrid fights for Champions League qualification with their trademark defensive resilience.",
+      source: "La Liga",
+      category: "La Liga"
     },
     es: {
-      title: "Actualizacion NBA: Lakers y Celtics Lideran Conferencias",
-      description: "La temporada regular de la NBA se intensifica mientras los tradicionales poderosos Lakers y Celtics dominan sus respectivas conferencias.",
-      source: "Noticias NBA",
-      category: "baloncesto"
+      title: "Atletico Madrid Lucha por el Top Cuatro",
+      description: "El Atletico Madrid de Diego Simeone lucha por la clasificacion a Champions League con su caracteristica solidez defensiva.",
+      source: "La Liga",
+      category: "La Liga"
+    }
+  },
+  // ========== PREMIER LEAGUE (England) ==========
+  {
+    en: {
+      title: "Premier League: Manchester City Extends Title Race Lead",
+      description: "Pep Guardiola's Manchester City continues their dominant form, with Erling Haaland scoring another hat-trick.",
+      source: "Premier League",
+      category: "Premier League"
+    },
+    es: {
+      title: "Premier League: Manchester City Extiende Ventaja en la Cima",
+      description: "El Manchester City de Pep Guardiola continua su forma dominante, con Erling Haaland anotando otro hat-trick.",
+      source: "Premier League",
+      category: "Premier League"
     }
   },
   {
     en: {
-      title: "Champions League: Real Madrid Advances to Quarterfinals",
-      description: "Real Madrid secures their place in the Champions League quarterfinals with a dominant performance at the Santiago Bernabeu.",
+      title: "Liverpool vs Arsenal: Title Decider at Anfield",
+      description: "A crucial Premier League clash at Anfield as Liverpool hosts Arsenal in what could be a title-deciding encounter.",
+      source: "Premier League",
+      category: "Premier League"
+    },
+    es: {
+      title: "Liverpool vs Arsenal: Duelo Decisivo en Anfield",
+      description: "Un crucial choque de Premier League en Anfield mientras Liverpool recibe al Arsenal en lo que podria ser un encuentro decisivo por el titulo.",
+      source: "Premier League",
+      category: "Premier League"
+    }
+  },
+  {
+    en: {
+      title: "Chelsea Rebuilds Under New Management",
+      description: "Chelsea continues their rebuilding project with young talents stepping up at Stamford Bridge.",
+      source: "Premier League",
+      category: "Premier League"
+    },
+    es: {
+      title: "Chelsea se Reconstruye Bajo Nueva Direccion",
+      description: "Chelsea continua su proyecto de reconstruccion con jovenes talentos destacando en Stamford Bridge.",
+      source: "Premier League",
+      category: "Premier League"
+    }
+  },
+  // ========== SERIE A (Italy) ==========
+  {
+    en: {
+      title: "Serie A: Inter Milan Leads the Scudetto Race",
+      description: "Inter Milan dominates Italian football with their solid defense and clinical finishing, leading the Serie A standings.",
+      source: "Serie A",
+      category: "Serie A"
+    },
+    es: {
+      title: "Serie A: Inter Milan Lidera la Carrera por el Scudetto",
+      description: "Inter Milan domina el futbol italiano con su solida defensa y definicion clinica, liderando la tabla de la Serie A.",
+      source: "Serie A",
+      category: "Serie A"
+    }
+  },
+  {
+    en: {
+      title: "Juventus vs AC Milan: Derby d'Italia Preview",
+      description: "Two Italian giants clash in a historic rivalry match that could define the Champions League qualification race.",
+      source: "Serie A",
+      category: "Serie A"
+    },
+    es: {
+      title: "Juventus vs AC Milan: Previa del Derby d'Italia",
+      description: "Dos gigantes italianos chocan en un historico partido de rivalidad que podria definir la carrera por la clasificacion a Champions.",
+      source: "Serie A",
+      category: "Serie A"
+    }
+  },
+  {
+    en: {
+      title: "Napoli Defends Serie A Title with Style",
+      description: "The reigning champions Napoli continue to play attractive football as they defend their historic Scudetto.",
+      source: "Serie A",
+      category: "Serie A"
+    },
+    es: {
+      title: "Napoli Defiende el Titulo de Serie A con Estilo",
+      description: "Los actuales campeones Napoli continuan jugando futbol atractivo mientras defienden su historico Scudetto.",
+      source: "Serie A",
+      category: "Serie A"
+    }
+  },
+  // ========== BUNDESLIGA (Germany) ==========
+  {
+    en: {
+      title: "Bundesliga: Bayern Munich Chases Another Title",
+      description: "Bayern Munich continues their pursuit of another Bundesliga title with Harry Kane leading the scoring charts.",
+      source: "Bundesliga",
+      category: "Bundesliga"
+    },
+    es: {
+      title: "Bundesliga: Bayern Munich Persigue Otro Titulo",
+      description: "Bayern Munich continua su busqueda de otro titulo de Bundesliga con Harry Kane liderando la tabla de goleadores.",
+      source: "Bundesliga",
+      category: "Bundesliga"
+    }
+  },
+  {
+    en: {
+      title: "Borussia Dortmund's Young Talents Impress",
+      description: "Borussia Dortmund's academy continues to produce world-class talents, challenging Bayern's dominance.",
+      source: "Bundesliga",
+      category: "Bundesliga"
+    },
+    es: {
+      title: "Jovenes Talentos del Borussia Dortmund Impresionan",
+      description: "La academia del Borussia Dortmund continua produciendo talentos de clase mundial, desafiando el dominio del Bayern.",
+      source: "Bundesliga",
+      category: "Bundesliga"
+    }
+  },
+  // ========== LIGA MX (Mexico) ==========
+  {
+    en: {
+      title: "Liga MX: Club America Eyes Another Championship",
+      description: "Las Aguilas del America continue their impressive form in Liga MX, aiming for another title at the Azteca.",
+      source: "Liga MX",
+      category: "Liga MX"
+    },
+    es: {
+      title: "Liga MX: Club America Busca Otro Campeonato",
+      description: "Las Aguilas del America continuan su impresionante forma en Liga MX, buscando otro titulo en el Azteca.",
+      source: "Liga MX",
+      category: "Liga MX"
+    }
+  },
+  {
+    en: {
+      title: "Clasico Nacional: America vs Chivas Preview",
+      description: "Mexico's biggest rivalry match approaches as Club America and Chivas prepare for the Clasico Nacional.",
+      source: "Liga MX",
+      category: "Liga MX"
+    },
+    es: {
+      title: "Clasico Nacional: America vs Chivas - Previa",
+      description: "El partido de mayor rivalidad en Mexico se acerca mientras Club America y Chivas se preparan para el Clasico Nacional.",
+      source: "Liga MX",
+      category: "Liga MX"
+    }
+  },
+  {
+    en: {
+      title: "Tigres UANL Dominates in Liga MX Apertura",
+      description: "Tigres continues to be a powerhouse in Mexican football, with their French connection leading the attack.",
+      source: "Liga MX",
+      category: "Liga MX"
+    },
+    es: {
+      title: "Tigres UANL Domina en el Apertura de Liga MX",
+      description: "Tigres continua siendo una potencia en el futbol mexicano, con su conexion francesa liderando el ataque.",
+      source: "Liga MX",
+      category: "Liga MX"
+    }
+  },
+  {
+    en: {
+      title: "Monterrey vs Cruz Azul: Top of the Table Clash",
+      description: "Two Liga MX giants meet in a crucial match that could determine the Liguilla seeding.",
+      source: "Liga MX",
+      category: "Liga MX"
+    },
+    es: {
+      title: "Monterrey vs Cruz Azul: Choque en la Cima",
+      description: "Dos gigantes de Liga MX se enfrentan en un partido crucial que podria determinar la siembra de la Liguilla.",
+      source: "Liga MX",
+      category: "Liga MX"
+    }
+  },
+  // ========== BRAZILIAN LEAGUE ==========
+  {
+    en: {
+      title: "Brasileirao: Flamengo Leads the Championship",
+      description: "Flamengo continues their dominance in Brazilian football, with the Maracana faithful cheering them on.",
+      source: "Brasileirao",
+      category: "Brasileirao"
+    },
+    es: {
+      title: "Brasileirao: Flamengo Lidera el Campeonato",
+      description: "Flamengo continua su dominio en el futbol brasileno, con los fieles del Maracana animandolos.",
+      source: "Brasileirao",
+      category: "Brasileirao"
+    }
+  },
+  {
+    en: {
+      title: "Palmeiras vs Corinthians: Paulista Derby",
+      description: "Sao Paulo's biggest derby ignites as Palmeiras and Corinthians battle for bragging rights.",
+      source: "Brasileirao",
+      category: "Brasileirao"
+    },
+    es: {
+      title: "Palmeiras vs Corinthians: Derby Paulista",
+      description: "El mayor derby de Sao Paulo se enciende mientras Palmeiras y Corinthians luchan por el orgullo.",
+      source: "Brasileirao",
+      category: "Brasileirao"
+    }
+  },
+  {
+    en: {
+      title: "Botafogo Surprises in Brasileirao Title Race",
+      description: "Botafogo emerges as a title contender in Brazilian football, bringing excitement back to Rio de Janeiro.",
+      source: "Brasileirao",
+      category: "Brasileirao"
+    },
+    es: {
+      title: "Botafogo Sorprende en la Carrera por el Titulo",
+      description: "Botafogo emerge como contendiente al titulo en el futbol brasileno, trayendo emocion de vuelta a Rio de Janeiro.",
+      source: "Brasileirao",
+      category: "Brasileirao"
+    }
+  },
+  // ========== ARGENTINE LEAGUE ==========
+  {
+    en: {
+      title: "Liga Argentina: Boca Juniors vs River Plate Superclasico",
+      description: "The world's most passionate derby approaches as Boca Juniors hosts River Plate at La Bombonera.",
+      source: "Liga Argentina",
+      category: "Liga Argentina"
+    },
+    es: {
+      title: "Liga Argentina: Superclasico Boca Juniors vs River Plate",
+      description: "El derby mas apasionado del mundo se acerca mientras Boca Juniors recibe a River Plate en La Bombonera.",
+      source: "Liga Argentina",
+      category: "Liga Argentina"
+    }
+  },
+  {
+    en: {
+      title: "River Plate Dominates Argentine Football",
+      description: "River Plate continues their impressive run in Argentine football, with young talents emerging from their academy.",
+      source: "Liga Argentina",
+      category: "Liga Argentina"
+    },
+    es: {
+      title: "River Plate Domina el Futbol Argentino",
+      description: "River Plate continua su impresionante racha en el futbol argentino, con jovenes talentos emergiendo de su cantera.",
+      source: "Liga Argentina",
+      category: "Liga Argentina"
+    }
+  },
+  {
+    en: {
+      title: "Racing Club Challenges for Liga Argentina Title",
+      description: "Racing Club from Avellaneda emerges as a serious title contender in the Argentine Primera Division.",
+      source: "Liga Argentina",
+      category: "Liga Argentina"
+    },
+    es: {
+      title: "Racing Club Desafia por el Titulo de Liga Argentina",
+      description: "Racing Club de Avellaneda emerge como serio contendiente al titulo en la Primera Division Argentina.",
+      source: "Liga Argentina",
+      category: "Liga Argentina"
+    }
+  },
+  // ========== COPA LIBERTADORES ==========
+  {
+    en: {
+      title: "Copa Libertadores: South America's Premier Club Competition",
+      description: "The Copa Libertadores knockout stages deliver drama as the continent's best clubs battle for glory.",
+      source: "CONMEBOL",
+      category: "Copa Libertadores"
+    },
+    es: {
+      title: "Copa Libertadores: La Maxima Competicion de Clubes de Sudamerica",
+      description: "Las etapas eliminatorias de la Copa Libertadores entregan drama mientras los mejores clubes del continente luchan por la gloria.",
+      source: "CONMEBOL",
+      category: "Copa Libertadores"
+    }
+  },
+  {
+    en: {
+      title: "Copa Libertadores Final: Historic Match Approaches",
+      description: "Two South American giants prepare for the biggest match in club football on the continent.",
+      source: "CONMEBOL",
+      category: "Copa Libertadores"
+    },
+    es: {
+      title: "Final Copa Libertadores: Se Acerca Partido Historico",
+      description: "Dos gigantes sudamericanos se preparan para el partido mas grande del futbol de clubes en el continente.",
+      source: "CONMEBOL",
+      category: "Copa Libertadores"
+    }
+  },
+  // ========== UEFA CHAMPIONS LEAGUE ==========
+  {
+    en: {
+      title: "Champions League: Europe's Elite Battle for Glory",
+      description: "The UEFA Champions League knockout rounds deliver thrilling football as Europe's best clubs compete.",
       source: "UEFA",
-      category: "football"
+      category: "Champions League"
     },
     es: {
-      title: "Champions League: Real Madrid Avanza a Cuartos de Final",
-      description: "Real Madrid asegura su lugar en los cuartos de final de la Champions League con una actuacion dominante en el Santiago Bernabeu.",
+      title: "Champions League: La Elite Europea Lucha por la Gloria",
+      description: "Las rondas eliminatorias de la UEFA Champions League entregan futbol emocionante mientras los mejores clubes de Europa compiten.",
       source: "UEFA",
-      category: "futbol"
+      category: "Champions League"
     }
   },
   {
     en: {
-      title: "MLB Spring Training: Teams Prepare for New Season",
-      description: "Major League Baseball teams begin spring training preparations, with several Salvadoran prospects catching scouts' attention.",
-      source: "MLB News",
-      category: "baseball"
+      title: "Real Madrid's Champions League Legacy Continues",
+      description: "The most successful club in Champions League history continues their European dominance.",
+      source: "UEFA",
+      category: "Champions League"
     },
     es: {
-      title: "Entrenamientos de Primavera MLB: Equipos se Preparan",
-      description: "Equipos de las Grandes Ligas inician preparativos de entrenamientos de primavera, con varios prospectos salvadorenos llamando la atencion de cazatalentos.",
-      source: "Noticias MLB",
-      category: "beisbol"
+      title: "El Legado de Real Madrid en Champions League Continua",
+      description: "El club mas exitoso en la historia de la Champions League continua su dominio europeo.",
+      source: "UEFA",
+      category: "Champions League"
+    }
+  },
+  // ========== LIGUE 1 (France) ==========
+  {
+    en: {
+      title: "Ligue 1: PSG Continues French Dominance",
+      description: "Paris Saint-Germain maintains their grip on French football with their star-studded squad.",
+      source: "Ligue 1",
+      category: "Ligue 1"
+    },
+    es: {
+      title: "Ligue 1: PSG Continua su Dominio Frances",
+      description: "Paris Saint-Germain mantiene su dominio en el futbol frances con su plantilla estelar.",
+      source: "Ligue 1",
+      category: "Ligue 1"
     }
   },
   {
     en: {
-      title: "El Salvador Hosts International Beach Soccer Tournament",
-      description: "The beaches of La Libertad welcome teams from across the Americas for an exciting beach soccer competition.",
-      source: "Beach Soccer Worldwide",
-      category: "football"
+      title: "Monaco and Marseille Challenge PSG's Supremacy",
+      description: "AS Monaco and Olympique Marseille emerge as serious challengers to PSG's Ligue 1 dominance.",
+      source: "Ligue 1",
+      category: "Ligue 1"
     },
     es: {
-      title: "El Salvador Sede de Torneo Internacional de Futbol Playa",
-      description: "Las playas de La Libertad dan la bienvenida a equipos de toda America para una emocionante competencia de futbol playa.",
-      source: "Futbol Playa Mundial",
-      category: "futbol"
-    }
-  },
-  {
-    en: {
-      title: "Tennis: Grand Slam Season Approaches with New Stars Rising",
-      description: "Young tennis talents emerge as the sport prepares for another exciting Grand Slam season.",
-      source: "ATP/WTA Tour",
-      category: "tennis"
-    },
-    es: {
-      title: "Tenis: Temporada de Grand Slam se Acerca con Nuevas Estrellas",
-      description: "Jovenes talentos del tenis emergen mientras el deporte se prepara para otra emocionante temporada de Grand Slam.",
-      source: "ATP/WTA Tour",
-      category: "tenis"
+      title: "Monaco y Marsella Desafian la Supremacia del PSG",
+      description: "AS Monaco y Olympique Marsella emergen como serios rivales al dominio del PSG en la Ligue 1.",
+      source: "Ligue 1",
+      category: "Ligue 1"
     }
   }
 ];
@@ -543,38 +833,81 @@ async function fetchExternalMeme(language = 'en') {
   return getRandomMeme('en');
 }
 
-// Fetch sports news from API (with fallback)
+// Major leagues to filter from API (Latin America & Europe)
+const MAJOR_LEAGUES = [
+  // European Leagues
+  'spanish la liga', 'la liga', 'laliga',
+  'english premier league', 'premier league',
+  'italian serie a', 'serie a',
+  'german bundesliga', 'bundesliga',
+  'french ligue 1', 'ligue 1',
+  'uefa champions league', 'champions league',
+  'uefa europa league', 'europa league',
+  // Latin American Leagues
+  'liga mx', 'mexican primera',
+  'brazilian serie a', 'brasileirao', 'campeonato brasileiro',
+  'argentine primera', 'liga argentina', 'superliga argentina',
+  'copa libertadores',
+  'copa sudamericana'
+];
+
+// Check if league is a major league
+function isMajorLeague(leagueName) {
+  if (!leagueName) return false;
+  const lowerLeague = leagueName.toLowerCase();
+  return MAJOR_LEAGUES.some(major => lowerLeague.includes(major));
+}
+
+// Fetch sports news from API (Latin American & European major leagues focus)
 async function fetchSportsNews() {
-  // Try to fetch from a free sports API
+  // 60% chance to use curated content for variety (better quality)
+  const useCurated = Math.random() < 0.6;
+  
+  if (useCurated) {
+    return getRandomSportsNews();
+  }
+  
+  // Try to fetch soccer events from TheSportsDB API
   try {
-    const response = await fetch('https://www.thesportsdb.com/api/v1/json/3/eventsday.php?d=' + new Date().toISOString().split('T')[0]);
+    const today = new Date().toISOString().split('T')[0];
+    const response = await fetch(`https://www.thesportsdb.com/api/v1/json/3/eventsday.php?d=${today}&s=Soccer`);
+    
     if (response.ok) {
       const data = await response.json();
       if (data.events && data.events.length > 0) {
-        const event = data.events[Math.floor(Math.random() * Math.min(data.events.length, 10))];
-        return {
-          type: 'sports',
-          content: {
-            en: {
-              title: `${event.strEvent}`,
-              description: `${event.strLeague}: ${event.strHomeTeam} vs ${event.strAwayTeam}. ${event.strVenue ? 'Venue: ' + event.strVenue : ''}`,
-              source: 'TheSportsDB',
-              category: event.strSport?.toLowerCase() || 'sports'
+        // Filter for major Latin American and European leagues only
+        const majorLeagueEvents = data.events.filter(e => 
+          (e.strSport?.toLowerCase() === 'soccer' || e.strSport?.toLowerCase() === 'football') &&
+          isMajorLeague(e.strLeague)
+        );
+        
+        if (majorLeagueEvents.length > 0) {
+          const event = majorLeagueEvents[Math.floor(Math.random() * Math.min(majorLeagueEvents.length, 10))];
+          return {
+            type: 'sports',
+            content: {
+              en: {
+                title: `${event.strEvent}`,
+                description: `${event.strLeague}: ${event.strHomeTeam} vs ${event.strAwayTeam}. ${event.strVenue ? 'Venue: ' + event.strVenue : ''}`,
+                source: event.strLeague || 'Live Match',
+                category: event.strLeague || 'Soccer'
+              },
+              es: {
+                title: `${event.strEvent}`,
+                description: `${event.strLeague}: ${event.strHomeTeam} vs ${event.strAwayTeam}. ${event.strVenue ? 'Estadio: ' + event.strVenue : ''}`,
+                source: event.strLeague || 'Partido en Vivo',
+                category: event.strLeague || 'Futbol'
+              }
             },
-            es: {
-              title: `${event.strEvent}`,
-              description: `${event.strLeague}: ${event.strHomeTeam} vs ${event.strAwayTeam}. ${event.strVenue ? 'Lugar: ' + event.strVenue : ''}`,
-              source: 'TheSportsDB',
-              category: event.strSport?.toLowerCase() || 'deportes'
-            }
-          },
-          id: `sports_ext_${Date.now()}`
-        };
+            id: `sports_ext_${Date.now()}`
+          };
+        }
       }
     }
   } catch (error) {
     console.log('External sports API unavailable, using fallback');
   }
+  // Fallback to curated soccer news from major leagues
   return getRandomSportsNews();
 }
 

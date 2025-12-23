@@ -94,6 +94,7 @@ const elements = {
   cardBody: document.getElementById('cardBody'),
   btnFact: document.getElementById('btnFact'),
   btnNews: document.getElementById('btnNews'),
+  btnSports: document.getElementById('btnSports'),
   btnMeme: document.getElementById('btnMeme'),
   btnRandom: document.getElementById('btnRandom'),
   cookieModal: document.getElementById('cookieModal'),
@@ -239,7 +240,20 @@ function displayContent(content) {
       bodyHtml = `
         <h3>${newsContent.title}</h3>
         <p>${newsContent.description}</p>
+        ${newsContent.category ? `<p class="source">${strings.category}: ${newsContent.category}</p>` : ''}
         <p class="source">${strings.source}: ${newsContent.source}</p>
+      `;
+      break;
+      
+    case 'sports':
+      typeLabel = strings.sportsType;
+      typeIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>';
+      const sportsContent = content.content[lang] || content.content.en;
+      bodyHtml = `
+        <h3>${sportsContent.title}</h3>
+        <p>${sportsContent.description}</p>
+        ${sportsContent.category ? `<p class="source">${strings.category}: ${sportsContent.category}</p>` : ''}
+        <p class="source">${strings.source}: ${sportsContent.source}</p>
       `;
       break;
       
@@ -252,14 +266,24 @@ function displayContent(content) {
           <img src="${content.content.imageUrl}" alt="Meme" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 200 150%27%3E%3Crect fill=%27%23f0f8ff%27 width=%27200%27 height=%27150%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 fill=%27%230099cc%27%3EImage unavailable%3C/text%3E%3C/svg%3E'">
         `;
         
+        // Language-specific memes have direct text (not nested by language)
         if (content.content.topText) {
-          bodyHtml += `<p class="meme-text">${content.content.topText[lang]}</p>`;
+          const topText = typeof content.content.topText === 'string' 
+            ? content.content.topText 
+            : (content.content.topText[lang] || content.content.topText);
+          bodyHtml += `<p class="meme-text">${topText}</p>`;
         }
         if (content.content.bottomText) {
-          bodyHtml += `<p class="meme-text">${content.content.bottomText[lang]}</p>`;
+          const bottomText = typeof content.content.bottomText === 'string' 
+            ? content.content.bottomText 
+            : (content.content.bottomText[lang] || content.content.bottomText);
+          bodyHtml += `<p class="meme-text">${bottomText}</p>`;
         }
         if (content.content.title) {
-          bodyHtml += `<p class="meme-text">${content.content.title[lang] || content.content.title.en}</p>`;
+          const title = typeof content.content.title === 'string'
+            ? content.content.title
+            : (content.content.title[lang] || content.content.title.en || content.content.title);
+          bodyHtml += `<p class="meme-text">${title}</p>`;
         }
       }
       break;
@@ -350,7 +374,8 @@ async function fetchContent(contentType) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         sessionId: state.sessionId,
-        contentType: contentType === 'random' ? null : contentType
+        contentType: contentType === 'random' ? null : contentType,
+        language: state.language
       })
     });
     
@@ -426,6 +451,7 @@ function setupEventListeners() {
   // Content buttons
   elements.btnFact.addEventListener('click', () => fetchContent('fact'));
   elements.btnNews.addEventListener('click', () => fetchContent('news'));
+  elements.btnSports.addEventListener('click', () => fetchContent('sports'));
   elements.btnMeme.addEventListener('click', () => fetchContent('meme'));
   elements.btnRandom.addEventListener('click', () => fetchContent('random'));
   
